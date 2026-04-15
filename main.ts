@@ -1,12 +1,9 @@
-let strip = neopixel.create(DigitalPin.P3, 120, NeoPixelMode.RGB)
-strip.clear()
-for (let Index = 0; Index <= 9; Index++) {
-    strip.setPixelColor(Index + 10, neopixel.colors(NeoPixelColors.Blue))
-}
-for (let Index = 0; Index <= 9; Index++) {
-    strip.setPixelColor(Index + 20, neopixel.colors(NeoPixelColors.Red))
-}
-strip.show()
+let strip: neopixel.Strip = null
+input.onButtonEvent(Button.A, input.buttonEventClick(), function () {
+    strip = neopixel.create(DigitalPin.P0, 118, NeoPixelMode.RGB)
+    strip.showRainbow(1, 360)
+    strip.show()
+})
 basic.forever(function () {
 	
 })
